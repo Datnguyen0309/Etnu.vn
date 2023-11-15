@@ -27,14 +27,14 @@ export default async function handler(
     // });
     // const cats: any[] = (await resCats.json()) || [];
     // const newCat = cats?.find((cat) => cat.name === "Tin Tức");
-    const idNew = 84;
+    const idNew = 216;
     // const notifiCat = cats?.find((cat) => cat.name === "Thông báo");
-    const idNotifi = 82;
+    const idNotifi = 219;
     const id = type === "news" ? idNew : type === "notifis" ? idNotifi : null;
     const endPoint = id
       ? `${api_url}/posts?_embed&per_page=8&status=publish&page=${page}&categories=${id}`
       : //&categories=${id}
-        `${api_url}/posts?_embed&per_page=8&status=publish&page=${page}`;
+      `${api_url}/posts?_embed&per_page=8&status=publish&page=${page}`;
 
     //get posts category==='tin-tuc'
     const res = await fetch(endPoint, {
@@ -46,14 +46,14 @@ export default async function handler(
     posts =
       postsNotFeatureImage?.length > 0
         ? postsNotFeatureImage?.map((post: any) => {
-            const featured_image =
-              post._embedded?.["wp:featuredmedia"]?.[0]?.source_url || null;
+          const featured_image =
+            post._embedded?.["wp:featuredmedia"]?.[0]?.source_url || null;
 
-            return {
-              ...post,
-              featured_image,
-            };
-          })
+          return {
+            ...post,
+            featured_image,
+          };
+        })
         : [];
   } catch (error) {
     console.log(error);
