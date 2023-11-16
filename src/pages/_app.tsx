@@ -22,10 +22,10 @@ const App = ({ Component, pageProps }: AppPropsWithLayout) => {
   return (
     <>
       <DefaultSeo
-        title="Đại học Thái Nguyên hệ đào tạo từ xa"
-        description="Đại học Thái Nguyên hệ đào tạo từ xa tuyển sinh 2023"
+        title="Đại học Thái Nguyên hệ Đào tạo từ xa"
+        description="Đại học Thái Nguyên hệ Đào tạo từ xa tuyển sinh 2023"
       />
-       <ChakraProvider theme={theme}>
+      <ChakraProvider theme={theme}>
         <ModalProvider>
           <Layout>{getLayout(<Component {...pageProps} />)}</Layout>
         </ModalProvider>
