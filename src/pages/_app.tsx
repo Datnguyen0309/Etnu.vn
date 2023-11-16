@@ -28,8 +28,8 @@ const App = ({ Component, pageProps }: AppPropsWithLayout) => {
           images: [
             {
               url: "/seo.jpg",
-              width: 1620,
-              height: 1080,
+              width: 695,
+              height: 696,
               alt: "Đại học Thái Nguyên hệ Đào tạo từ xa",
             },
           ],
