@@ -24,7 +24,18 @@ const App = ({ Component, pageProps }: AppPropsWithLayout) => {
       <DefaultSeo
         title="Đại học Thái Nguyên hệ Đào tạo từ xa"
         description="Đại học Thái Nguyên hệ Đào tạo từ xa tuyển sinh 2023"
+        openGraph={{
+          images: [
+            {
+              url: "/seo.jpg",
+              width: 1620,
+              height: 1080,
+              alt: "Đại học Thái Nguyên hệ Đào tạo từ xa",
+            },
+          ],
+        }}
       />
+
       <ChakraProvider theme={theme}>
         <ModalProvider>
           <Layout>{getLayout(<Component {...pageProps} />)}</Layout>
